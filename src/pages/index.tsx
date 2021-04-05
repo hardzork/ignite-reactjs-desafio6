@@ -1,5 +1,9 @@
 import { Box, Divider, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+SwiperCore.use([Navigation, Pagination]);
 
 export default function Home() {
   return (
@@ -59,13 +63,45 @@ export default function Home() {
       <Flex flex="1" justify="center" align="center">
         <Divider bgColor="text.dark" w="24" h="0.6" />
       </Flex>
-      <Flex justify="center" align="center" py="9" mt="9">
+      <Flex display="flex" justify="center" align="center" my="12">
         <Text fontSize="36" color="text.dark" textAlign="center">
           Vamos nessa?
           <br />
           Então escolha seu continente
         </Text>
       </Flex>
+      <Box px="56" my="20">
+        <Swiper pagination={{ clickable: true }}>
+          <SwiperSlide key="slide-1">
+            <Image src="/images/europa.jpeg" w={1240} h={330} fit="cover" />
+          </SwiperSlide>
+          <SwiperSlide key="slide-2">
+            <Image src="/images/asia.jpeg" w={1240} h={330} fit="cover" />
+          </SwiperSlide>
+          <SwiperSlide key="slide-3">
+            <Image
+              src="/images/north-america.jpeg"
+              w={1240}
+              h={330}
+              fit="cover"
+            />
+          </SwiperSlide>
+          <SwiperSlide key="slide-4">
+            <Image
+              src="/images/south-america.jpeg"
+              w={1240}
+              h={330}
+              fit="cover"
+            />
+          </SwiperSlide>
+          <SwiperSlide key="slide-5">
+            <Image src="/images/africa.jpeg" w={1240} h={330} fit="cover" />
+          </SwiperSlide>
+          <SwiperSlide key="slide-6">
+            <Image src="/images/oceania.jpeg" w={1240} h={330} fit="cover" />
+          </SwiperSlide>
+        </Swiper>
+      </Box>
     </>
   );
 }
