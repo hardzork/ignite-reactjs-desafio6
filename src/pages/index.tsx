@@ -1,13 +1,22 @@
 import { Box, Divider, Flex, Image, Text } from "@chakra-ui/react";
+import Head from "next/head";
 import React from "react";
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
+import SwiperCore, {
+  Navigation,
+  Pagination,
+  Autoplay,
+  EffectFade,
+} from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Navigation, Pagination, Autoplay, EffectFade]);
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Home | worldtrip</title>
+      </Head>
       <Flex justify="center" align="center" py="7">
         <Image src="/images/logo.svg" alt="World Trip"></Image>
       </Flex>
@@ -70,35 +79,213 @@ export default function Home() {
           Então escolha seu continente
         </Text>
       </Flex>
-      <Box px="56" my="20">
-        <Swiper pagination={{ clickable: true }}>
+      <Box px="56" pb="20" mt="7">
+        <Swiper
+          speed={1500}
+          effect="fade"
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          navigation
+        >
           <SwiperSlide key="slide-1">
-            <Image src="/images/europa.jpeg" w={1240} h={330} fit="cover" />
+            <Flex
+              bgImage="url('/images/europa.jpeg')"
+              bgPosition="center"
+              bgSize="cover"
+              w={1240}
+              h={450}
+              justify="center"
+              align="center"
+              direction="column"
+            >
+              <Text
+                color="text.dark"
+                fontSize="48"
+                fontWeight="bold"
+                bgColor="text.extralight"
+                borderTopRadius="md"
+                p="2"
+              >
+                Europa
+              </Text>
+              <Text
+                color="text.dark"
+                fontSize="24"
+                fontWeight="bold"
+                bgColor="text.extralight"
+                borderRadius="md"
+                p="2"
+              >
+                O contine mais antigo.
+              </Text>
+            </Flex>
           </SwiperSlide>
           <SwiperSlide key="slide-2">
-            <Image src="/images/asia.jpeg" w={1240} h={330} fit="cover" />
+            <Flex
+              bgImage="url('/images/asia.jpeg')"
+              bgPosition="center"
+              bgSize="cover"
+              w={1240}
+              h={450}
+              justify="center"
+              align="center"
+              direction="column"
+            >
+              <Text
+                color="text.dark"
+                fontSize="48"
+                fontWeight="bold"
+                bgColor="text.extralight"
+                borderTopRadius="md"
+                p="2"
+              >
+                Ásia
+              </Text>
+              <Text
+                color="text.dark"
+                fontSize="24"
+                fontWeight="bold"
+                bgColor="text.extralight"
+                borderRadius="md"
+                p="2"
+              >
+                O maior dos continentes.
+              </Text>
+            </Flex>
           </SwiperSlide>
           <SwiperSlide key="slide-3">
-            <Image
-              src="/images/north-america.jpeg"
+            <Flex
+              bgImage="url('/images/north-america.jpeg')"
+              bgPosition="center"
+              bgSize="cover"
               w={1240}
-              h={330}
-              fit="cover"
-            />
+              h={450}
+              justify="center"
+              align="center"
+              direction="column"
+            >
+              <Text
+                color="text.dark"
+                fontSize="48"
+                fontWeight="bold"
+                bgColor="text.extralight"
+                borderRadius="md"
+                p="2"
+              >
+                América do Norte
+              </Text>
+              <Text
+                color="text.dark"
+                fontSize="24"
+                fontWeight="bold"
+                bgColor="text.extralight"
+                borderBottomRadius="md"
+                p="2"
+              >
+                O lar do sonho americano.
+              </Text>
+            </Flex>
           </SwiperSlide>
           <SwiperSlide key="slide-4">
-            <Image
-              src="/images/south-america.jpeg"
+            <Flex
+              bgImage="url('/images/south-america.jpeg')"
+              bgPosition="center"
+              bgSize="cover"
               w={1240}
-              h={330}
-              fit="cover"
-            />
+              h={450}
+              justify="center"
+              align="center"
+              direction="column"
+            >
+              <Text
+                color="text.dark"
+                fontSize="48"
+                fontWeight="bold"
+                bgColor="text.extralight"
+                borderRadius="md"
+                p="2"
+              >
+                América do Sul
+              </Text>
+              <Text
+                color="text.dark"
+                fontSize="24"
+                fontWeight="bold"
+                bgColor="text.extralight"
+                borderBottomRadius="md"
+                p="2"
+              >
+                Sol, praia e mar.
+              </Text>
+            </Flex>
           </SwiperSlide>
           <SwiperSlide key="slide-5">
-            <Image src="/images/africa.jpeg" w={1240} h={330} fit="cover" />
+            <Flex
+              bgImage="url('/images/africa.jpeg')"
+              bgPosition="center"
+              bgSize="cover"
+              w={1240}
+              h={450}
+              justify="center"
+              align="center"
+              direction="column"
+            >
+              <Text
+                color="text.dark"
+                fontSize="48"
+                fontWeight="bold"
+                bgColor="text.extralight"
+                borderTopRadius="md"
+                p="2"
+              >
+                África
+              </Text>
+              <Text
+                color="text.dark"
+                fontSize="24"
+                fontWeight="bold"
+                bgColor="text.extralight"
+                borderRadius="md"
+                p="2"
+              >
+                Biodiversidade e multicultural.
+              </Text>
+            </Flex>
           </SwiperSlide>
           <SwiperSlide key="slide-6">
-            <Image src="/images/oceania.jpeg" w={1240} h={330} fit="cover" />
+            <Flex
+              bgImage="url('/images/oceania.jpeg')"
+              bgPosition="center"
+              bgSize="cover"
+              w={1240}
+              h={450}
+              justify="center"
+              align="center"
+              direction="column"
+            >
+              <Text
+                color="text.dark"
+                fontSize="48"
+                fontWeight="bold"
+                bgColor="text.extralight"
+                borderTopRadius="md"
+                p="2"
+              >
+                Oceania
+              </Text>
+              <Text
+                color="text.dark"
+                fontSize="24"
+                fontWeight="bold"
+                bgColor="text.extralight"
+                borderRadius="md"
+                p="2"
+              >
+                O continente mais isolado do mundo.
+              </Text>
+            </Flex>
           </SwiperSlide>
         </Swiper>
       </Box>
