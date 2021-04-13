@@ -1,4 +1,5 @@
-import { Box, Divider, Flex, Image, Link, Text } from "@chakra-ui/react";
+import { Box, Divider, Flex, Image, Text } from "@chakra-ui/react";
+import Link from "next/link";
 import Head from "next/head";
 import React from "react";
 import SwiperCore, {
@@ -91,37 +92,39 @@ export default function Home() {
         >
           <SwiperSlide key="slide-1">
             <Link href="/continentes/europa">
-              <Flex
-                bgImage="url('/images/europa.jpeg')"
-                bgPosition="center"
-                bgSize="cover"
-                w={1240}
-                h={450}
-                justify="center"
-                align="center"
-                direction="column"
-              >
-                <Text
-                  color="text.dark"
-                  fontSize="48"
-                  fontWeight="bold"
-                  bgColor="text.extralight"
-                  borderTopRadius="md"
-                  p="2"
+              <a>
+                <Flex
+                  bgImage="url('/images/europa.jpeg')"
+                  bgPosition="center"
+                  bgSize="cover"
+                  w={1240}
+                  h={450}
+                  justify="center"
+                  align="center"
+                  direction="column"
                 >
-                  Europa
-                </Text>
-                <Text
-                  color="text.dark"
-                  fontSize="24"
-                  fontWeight="bold"
-                  bgColor="text.extralight"
-                  borderRadius="md"
-                  p="2"
-                >
-                  O contine mais antigo.
-                </Text>
-              </Flex>
+                  <Text
+                    color="text.dark"
+                    fontSize="48"
+                    fontWeight="bold"
+                    bgColor="text.extralight"
+                    borderTopRadius="md"
+                    p="2"
+                  >
+                    Europa
+                  </Text>
+                  <Text
+                    color="text.dark"
+                    fontSize="24"
+                    fontWeight="bold"
+                    bgColor="text.extralight"
+                    borderRadius="md"
+                    p="2"
+                  >
+                    O contine mais antigo.
+                  </Text>
+                </Flex>
+              </a>
             </Link>
           </SwiperSlide>
           <SwiperSlide key="slide-2">
