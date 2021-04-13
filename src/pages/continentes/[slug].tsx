@@ -156,9 +156,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  console.log(params);
+  // console.log(params);
   const { slug } = params;
-  const response = await api.get<Continente[]>("");
+  const response = await api.get<Continente[]>("continents");
   const continente = response.data.filter((c) => c.slug === slug);
   // console.log(continente);
   const UM_DIA = 60 * 60 * 24;
