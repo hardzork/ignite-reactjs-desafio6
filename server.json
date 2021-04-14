@@ -5,60 +5,258 @@
       "slug": "europa",
       "name": "Europa",
       "description": "O contine mais antigo.",
+      "details": "A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste",
+      "countriesAmount": 50,
+      "languageSpokenAmount": 24,
       "image": {
         "src": "/images/europa.jpeg",
         "alt": "Paris, França"
-      }
+      },
+      "hundredPlusCities": [
+        {
+          "id": 1,
+          "name": "Londres",
+          "country": "Reino Unido",
+          "image": "/images/londres.jpeg",
+          "countryIcon": "/images/reino-unido.png"
+        },
+        {
+          "id": 2,
+          "name": "Paris",
+          "country": "França",
+          "image": "/images/paris.jpg",
+          "countryIcon": "/images/franca.png"
+        },
+        {
+          "id": 3,
+          "name": "Roma",
+          "country": "Itália",
+          "image": "/images/roma.jpeg",
+          "countryIcon": "/images/italia.png"
+        },
+        {
+          "id": 4,
+          "name": "Praga",
+          "country": "República Tcheca",
+          "image": "/images/praga.jpeg",
+          "countryIcon": "/images/republica-tcheca.png"
+        },
+        {
+          "id": 5,
+          "name": "Amsterdã",
+          "country": "Holanda",
+          "image": "/images/amsterdam.jpg",
+          "countryIcon": "/images/holanda.png"
+        }
+      ]
     },
     {
       "id": 2,
       "slug": "asia",
       "name": "Ásia",
       "description": "O maior dos continentes.",
+      "details": "A Ásia é o maior dos continentes, tanto em área como em população. Abrange um terço das partes sólidas da superfície da Terra e é responsável por abrigar quase três quintos da população mundial.",
+      "countriesAmount": 49,
+      "languageSpokenAmount": 2301,
       "image": {
         "src": "/images/asia.jpeg",
         "alt": "Hong Kong, China"
-      }
+      },
+      "hundredPlusCities": [
+        {
+          "id": 1,
+          "name": "Hong Kong",
+          "country": "China",
+          "image": "/images/hongkong.jpg",
+          "countryIcon": "/images/china.png"
+        },
+        {
+          "id": 2,
+          "name": "Bangkok",
+          "country": "Tailândia",
+          "image": "/images/bangkok.jpg",
+          "countryIcon": "/images/thailand.png"
+        },
+        {
+          "id": 3,
+          "name": "Macau",
+          "country": "China",
+          "image": "/images/macau.jpg",
+          "countryIcon": "/images/china.png"
+        },
+        {
+          "id": 4,
+          "name": "Singapura",
+          "country": "Singapura",
+          "image": "/images/singapura.jpg",
+          "countryIcon": "/images/singapura.png"
+        },
+        {
+          "id": 5,
+          "name": "Kuala Lumpur",
+          "country": "Malásia",
+          "image": "/images/kualalumpur.jpg",
+          "countryIcon": "/images/malasia.svg"
+        }
+      ]
     },
     {
       "id": 3,
       "slug": "north-america",
       "name": "América do Norte",
       "description": "O lar do sonho americano.",
+      "details": "A América do Norte é um subcontinente que compreende a porção setentrional do continente americano. Existem duas formas de classificar esse continente: a primeira considera que a América do Norte é apenas a parte mais setentrional da América, separada da América Central na fronteira entre o México e a Guatemala, a segunda classificação reconhece apenas uma América do Norte e uma América do Sul, traçando o limite no Istmo do Panamá (umas vezes no Canal do Panamá, outras na fronteira entre o Panamá e a Colômbia). Pela última definição, a América do Norte incluiria a América Central Continental e Insular (Caribe).",
+      "countriesAmount": 3,
+      "languageSpokenAmount": 256,
       "image": {
         "src": "/images/north-america.jpeg",
         "alt": "Nova Iorque, EUA"
-      }
+      },
+      "hundredPlusCities": [
+        {
+          "id": 1,
+          "name": "Nova Iórque",
+          "country": "Estados Unidos",
+          "image": "/images/novaiorque.jpg",
+          "countryIcon": "/images/estadosunidos.svg"
+        },
+        {
+          "id": 2,
+          "name": "Miami",
+          "country": "Estados Unidos",
+          "image": "/images/miami.jpg",
+          "countryIcon": "/images/estadosunidos.svg"
+        },
+        {
+          "id": 3,
+          "name": "Los Angeles",
+          "country": "Estados Unidos",
+          "image": "/images/losangeles.jpg",
+          "countryIcon": "/images/estadosunidos.svg"
+        },
+        {
+          "id": 4,
+          "name": "Las Vegas",
+          "country": "Estados Unidos",
+          "image": "/images/lasvegas.jpg",
+          "countryIcon": "/images/estadosunidos.svg"
+        },
+        {
+          "id": 5,
+          "name": "Orlando",
+          "country": "Estados Unidos",
+          "image": "/images/orlando.jpg",
+          "countryIcon": "/images/estadosunidos.svg"
+        }
+      ]
     },
     {
       "id": 4,
       "slug": "south-america",
       "name": "América do Sul",
       "description": "Sol, praia e mar.",
+      "details": "A América do Sul é um continente que compreende a porção meridional da América. Também é considerada um subcontinente do continente americano. A sua extensão é de 17 819 100 km², abrangendo 12% da superfície terrestre e 6% da população mundial.",
+      "countriesAmount": 12,
+      "languageSpokenAmount": 456,
       "image": {
         "src": "/images/south-america.jpeg",
         "alt": "Rio de Janeiro, Brasil"
-      }
+      },
+      "hundredPlusCities": [
+        {
+          "id": 1,
+          "name": "Rio de Janeiro",
+          "country": "Brasil",
+          "image": "/images/riodejaneiro.jpg",
+          "countryIcon": "/images/brasil.png"
+        },
+        {
+          "id": 2,
+          "name": "Lima",
+          "country": "Perú",
+          "image": "/images/lima.jpg",
+          "countryIcon": "/images/peru.svg"
+        },
+        {
+          "id": 3,
+          "name": "Buenos Aires",
+          "country": "Argentina",
+          "image": "/images/buenosaires.jpg",
+          "countryIcon": "/images/argentina.png"
+        }
+      ]
     },
     {
       "id": 5,
       "slug": "africa",
       "name": "África",
       "description": "Biodiversidade e multicultural.",
+      "details": "A África é o terceiro continente mais extenso (depois da Ásia e da América) com cerca de 30 milhões de quilômetros quadrados, cobrindo 20,3% da área total da terra firme do planeta. É o segundo continente mais populoso da Terra (atrás da Ásia) com cerca de um bilhão de pessoas (estimativa para 2005), representando cerca de um sétimo da população mundial, e 54 países independentes. Tem se transformado na ultima década em uma continente cada vez mais católico.",
+      "countriesAmount": 54,
+      "languageSpokenAmount": 2092,
       "image": {
         "src": "/images/africa.jpeg",
         "alt": "Desconhecido"
-      }
+      },
+      "hundredPlusCities": [
+        {
+          "id": 1,
+          "name": "Cidade do Cabo",
+          "country": "África do Sul",
+          "image": "/images/cidadedocabo.jpeg",
+          "countryIcon": "/images/africadosul.png"
+        },
+        {
+          "id": 2,
+          "name": "Cairo",
+          "country": "Egito",
+          "image": "/images/cairo.jpg",
+          "countryIcon": "/images/egito.png"
+        },
+        {
+          "id": 3,
+          "name": "Johannesburgo",
+          "country": "África do Sul",
+          "image": "/images/johannesburgo.jpg",
+          "countryIcon": "/images/africadosul.png"
+        }
+      ]
     },
     {
       "id": 6,
       "slug": "oceania",
       "name": "Oceania",
       "description": "O continente mais isolado do mundo.",
+      "details": "Oceania ou Oceânia é uma região geográfica composta por vários grupos de ilhas do oceano Pacífico (Polinésia, Melanésia e Micronésia). O termo Oceania foi criado em 1831 pelo explorador francês Dumont d'Urville. O termo é usado hoje em vários idiomas para designar uma região geográfica e política que compreende o continente da Austrália e ilhas do Oceano Pacífico adjacentes.",
+      "countriesAmount": 14,
+      "languageSpokenAmount": 15,
       "image": {
         "src": "/images/oceania.jpeg",
         "alt": "Sidney, Austrália"
-      }
+      },
+      "hundredPlusCities": [
+        {
+          "id": 1,
+          "name": "Sidney",
+          "country": "Austrália",
+          "image": "/images/sidney.jpeg",
+          "countryIcon": "/images/australia.png"
+        },
+        {
+          "id": 2,
+          "name": "Camberra",
+          "country": "Austrália",
+          "image": "/images/camberra.jpg",
+          "countryIcon": "/images/australia.png"
+        },
+        {
+          "id": 3,
+          "name": "Wellington",
+          "country": "Nova zelândia",
+          "image": "/images/wellington.jpg",
+          "countryIcon": "/images/novazelandia.png"
+        }
+      ]
     }
   ]
 }

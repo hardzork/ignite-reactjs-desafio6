@@ -2,21 +2,45 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Link from "next/link";
-import { Flex, Icon, Image, Box, Text, HStack } from "@chakra-ui/react";
+import {
+  Flex,
+  Icon,
+  Image,
+  Box,
+  Text,
+  HStack,
+  Heading,
+  SimpleGrid,
+  Avatar,
+  Tooltip,
+} from "@chakra-ui/react";
 import { FiChevronLeft, FiInfo } from "react-icons/fi";
 import { api } from "../../services/api";
+import React from "react";
 
 interface ContinenteProps {
   continente: Continente;
 }
 
+interface City {
+  id: number;
+  name: string;
+  country: string;
+  image: string;
+  countryIcon: string;
+}
+
 interface Continente {
   name: string;
   slug: string;
+  details: string;
+  countriesAmount: number;
+  languageSpokenAmount: number;
   image: {
     src: string;
     alt: string;
   };
+  hundredPlusCities: City[];
 }
 
 export default function Continente({ continente }: ContinenteProps) {
@@ -64,8 +88,15 @@ export default function Continente({ continente }: ContinenteProps) {
           {continente.name}
         </Text>
       </Flex>
-      <Flex w="100%" my="6" maxWidth={1480} mx="auto" px="40">
-        <Flex justify="center" align="center">
+      <Flex
+        w="100%"
+        my="6"
+        maxWidth={1480}
+        mx="auto"
+        px="40"
+        direction="column"
+      >
+        <Flex justify="center" align="center" my="10">
           <Text
             as="p"
             display="flex"
@@ -74,10 +105,7 @@ export default function Continente({ continente }: ContinenteProps) {
             fontSize="18"
             textAlign="justify"
           >
-            A Europa é, por convenção, um dos seis continentes do mundo.
-            Compreendendo a península ocidental da Eurásia, a Europa geralmente
-            divide-se da Ásia a leste pela divisória de águas dos montes Urais,
-            o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste
+            {continente.details}
           </Text>
           <Flex py="20" flex="1" justify="space-around" align="center" ml="70">
             <Flex justify="center" align="center" direction="column">
@@ -87,7 +115,7 @@ export default function Continente({ continente }: ContinenteProps) {
                 fontSize="48"
                 lineHeight="4,5"
               >
-                50
+                {continente.countriesAmount}
               </Text>
               <Text color="text.dark" fontWeight="bold" fontSize="24">
                 países
@@ -100,7 +128,7 @@ export default function Continente({ continente }: ContinenteProps) {
                 fontSize="48"
                 lineHeight="4,5"
               >
-                60
+                {continente.languageSpokenAmount}
               </Text>
               <Text color="text.dark" fontWeight="bold" fontSize="24">
                 línguas
@@ -113,17 +141,71 @@ export default function Continente({ continente }: ContinenteProps) {
                 fontSize="48"
                 lineHeight="4,5"
               >
-                27
+                {continente.hundredPlusCities?.length}
               </Text>
               <HStack>
                 <Text color="text.dark" fontWeight="bold" fontSize="24">
                   cidades +100
                 </Text>
-                <Icon as={FiInfo} fontSize="16" color="gray.400" />
+                <Tooltip
+                  hasArrow
+                  label="São as cidades do continente entre as 100 mais visitadas
+                        do mundo."
+                  aria-label="Cidades +100"
+                >
+                  <span>
+                    <Icon as={FiInfo} fontSize="16" color="gray.400" />
+                  </span>
+                </Tooltip>
               </HStack>
             </Flex>
           </Flex>
         </Flex>
+
+        <Heading
+          color="text.dark"
+          fontWeight="normal"
+          fontSize="36"
+          lineHeight="3"
+          mb="12"
+        >
+          Cidades +100
+        </Heading>
+        <SimpleGrid flex="1" spacing={10} maxChildWidth="256px" columns={4}>
+          {continente.hundredPlusCities?.map((city) => (
+            <Box
+              bg="white"
+              borderColor="text.highlighten"
+              borderWidth="thin"
+              borderRadius={4}
+            >
+              <Image src={city.image} width="100%" h={173} objectFit="cover" />
+              <Flex flex="1" justify="space-between" align="center" p="4">
+                <Flex direction="column">
+                  <Text
+                    fontFamily="Barlow"
+                    fontWeight="600"
+                    fontSize="20"
+                    lineHeight="2"
+                    color="text.dark"
+                  >
+                    {city.name}
+                  </Text>
+                  <Text
+                    fontFamily="Barlow"
+                    fontWeight="500"
+                    fontSize="16"
+                    lineHeight="2"
+                    color="text.dark"
+                  >
+                    {city.country}
+                  </Text>
+                </Flex>
+                <Avatar size="sm" name={city.country} src={city.countryIcon} />
+              </Flex>
+            </Box>
+          ))}
+        </SimpleGrid>
       </Flex>
     </>
   );

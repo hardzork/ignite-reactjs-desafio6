@@ -13,6 +13,7 @@ export const theme = extendTheme({
       light: "#F5F8FA",
       dark: "#47585B",
       highlight: "#FFBA08",
+      highlighten: "rgba(255, 186, 8, 0.5)",
     },
   },
   fonts: {

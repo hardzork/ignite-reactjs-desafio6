@@ -9,10 +9,27 @@ import SwiperCore, {
   EffectFade,
 } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { GetStaticProps } from "next";
+import { api } from "../services/api";
 
 SwiperCore.use([Navigation, Pagination, Autoplay, EffectFade]);
 
-export default function Home() {
+interface HomeProps {
+  continentes: Continente[];
+}
+
+interface Continente {
+  id: number;
+  name: string;
+  slug: string;
+  description: string;
+  image: {
+    src: string;
+    alt: string;
+  };
+}
+
+export default function Home({ continentes }: HomeProps) {
   return (
     <>
       <Head>
@@ -90,210 +107,58 @@ export default function Home() {
           }}
           navigation
         >
-          <SwiperSlide key="slide-1">
-            <Link href="/continentes/europa">
-              <a>
-                <Flex
-                  bgImage="url('/images/europa.jpeg')"
-                  bgPosition="center"
-                  bgSize="cover"
-                  w={1240}
-                  h={450}
-                  justify="center"
-                  align="center"
-                  direction="column"
-                >
-                  <Text
-                    color="text.dark"
-                    fontSize="48"
-                    fontWeight="bold"
-                    bgColor="text.extralight"
-                    borderTopRadius="md"
-                    p="2"
+          {continentes.map((continente) => (
+            <SwiperSlide key={`slide-${continente.id}`}>
+              <Link href={`/continentes/${continente.slug}`}>
+                <a>
+                  <Flex
+                    bgImage={`url('${continente.image?.src}')`}
+                    bgPosition="center"
+                    bgSize="cover"
+                    w={1240}
+                    h={450}
+                    justify="center"
+                    align="center"
+                    direction="column"
                   >
-                    Europa
-                  </Text>
-                  <Text
-                    color="text.dark"
-                    fontSize="24"
-                    fontWeight="bold"
-                    bgColor="text.extralight"
-                    borderRadius="md"
-                    p="2"
-                  >
-                    O contine mais antigo.
-                  </Text>
-                </Flex>
-              </a>
-            </Link>
-          </SwiperSlide>
-          <SwiperSlide key="slide-2">
-            <Flex
-              bgImage="url('/images/asia.jpeg')"
-              bgPosition="center"
-              bgSize="cover"
-              w={1240}
-              h={450}
-              justify="center"
-              align="center"
-              direction="column"
-            >
-              <Text
-                color="text.dark"
-                fontSize="48"
-                fontWeight="bold"
-                bgColor="text.extralight"
-                borderTopRadius="md"
-                p="2"
-              >
-                Ásia
-              </Text>
-              <Text
-                color="text.dark"
-                fontSize="24"
-                fontWeight="bold"
-                bgColor="text.extralight"
-                borderRadius="md"
-                p="2"
-              >
-                O maior dos continentes.
-              </Text>
-            </Flex>
-          </SwiperSlide>
-          <SwiperSlide key="slide-3">
-            <Flex
-              bgImage="url('/images/north-america.jpeg')"
-              bgPosition="center"
-              bgSize="cover"
-              w={1240}
-              h={450}
-              justify="center"
-              align="center"
-              direction="column"
-            >
-              <Text
-                color="text.dark"
-                fontSize="48"
-                fontWeight="bold"
-                bgColor="text.extralight"
-                borderRadius="md"
-                p="2"
-              >
-                América do Norte
-              </Text>
-              <Text
-                color="text.dark"
-                fontSize="24"
-                fontWeight="bold"
-                bgColor="text.extralight"
-                borderBottomRadius="md"
-                p="2"
-              >
-                O lar do sonho americano.
-              </Text>
-            </Flex>
-          </SwiperSlide>
-          <SwiperSlide key="slide-4">
-            <Flex
-              bgImage="url('/images/south-america.jpeg')"
-              bgPosition="center"
-              bgSize="cover"
-              w={1240}
-              h={450}
-              justify="center"
-              align="center"
-              direction="column"
-            >
-              <Text
-                color="text.dark"
-                fontSize="48"
-                fontWeight="bold"
-                bgColor="text.extralight"
-                borderRadius="md"
-                p="2"
-              >
-                América do Sul
-              </Text>
-              <Text
-                color="text.dark"
-                fontSize="24"
-                fontWeight="bold"
-                bgColor="text.extralight"
-                borderBottomRadius="md"
-                p="2"
-              >
-                Sol, praia e mar.
-              </Text>
-            </Flex>
-          </SwiperSlide>
-          <SwiperSlide key="slide-5">
-            <Flex
-              bgImage="url('/images/africa.jpeg')"
-              bgPosition="center"
-              bgSize="cover"
-              w={1240}
-              h={450}
-              justify="center"
-              align="center"
-              direction="column"
-            >
-              <Text
-                color="text.dark"
-                fontSize="48"
-                fontWeight="bold"
-                bgColor="text.extralight"
-                borderTopRadius="md"
-                p="2"
-              >
-                África
-              </Text>
-              <Text
-                color="text.dark"
-                fontSize="24"
-                fontWeight="bold"
-                bgColor="text.extralight"
-                borderRadius="md"
-                p="2"
-              >
-                Biodiversidade e multicultural.
-              </Text>
-            </Flex>
-          </SwiperSlide>
-          <SwiperSlide key="slide-6">
-            <Flex
-              bgImage="url('/images/oceania.jpeg')"
-              bgPosition="center"
-              bgSize="cover"
-              w={1240}
-              h={450}
-              justify="center"
-              align="center"
-              direction="column"
-            >
-              <Text
-                color="text.dark"
-                fontSize="48"
-                fontWeight="bold"
-                bgColor="text.extralight"
-                borderTopRadius="md"
-                p="2"
-              >
-                Oceania
-              </Text>
-              <Text
-                color="text.dark"
-                fontSize="24"
-                fontWeight="bold"
-                bgColor="text.extralight"
-                borderRadius="md"
-                p="2"
-              >
-                O continente mais isolado do mundo.
-              </Text>
-            </Flex>
-          </SwiperSlide>
+                    <Text
+                      color="text.dark"
+                      fontSize="48"
+                      fontWeight="bold"
+                      outlineColor="whi"
+                      bgColor="text.highlight"
+                      borderTopRadius="md"
+                      p="2"
+                    >
+                      {continente.name}
+                    </Text>
+                    <Text
+                      color="text.dark"
+                      fontSize="24"
+                      fontWeight="bold"
+                      bgColor="text.highlight"
+                      borderRadius="md"
+                      p="2"
+                    >
+                      {continente.description}
+                    </Text>
+                  </Flex>
+                </a>
+              </Link>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </Box>
     </>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await api.get<Continente[]>("continents");
+  const continentes = response.data;
+  const TRINTA_DIAS_EM_SEGUNDOS = 60 * 60 * 24 * 30;
+  return {
+    props: { continentes },
+    revalidate: TRINTA_DIAS_EM_SEGUNDOS,
+  };
+};
