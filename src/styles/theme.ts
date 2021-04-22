@@ -12,6 +12,7 @@ export const theme = extendTheme({
       extralight: "rgba(245, 248, 250,0.6)",
       light: "#F5F8FA",
       dark: "#47585B",
+      lightdark: "rgba(153, 153, 153, 1)",
       highlight: "#FFBA08",
       highlighten: "rgba(255, 186, 8, 0.5)",
     },
