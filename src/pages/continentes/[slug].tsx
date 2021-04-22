@@ -178,6 +178,7 @@ export default function Continente({ continente }: ContinenteProps) {
               borderColor="text.highlighten"
               borderWidth="thin"
               borderRadius={4}
+              key={city.id}
             >
               <Image src={city.image} width="100%" h={173} objectFit="cover" />
               <Flex flex="1" justify="space-between" align="center" p="4">
